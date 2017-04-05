@@ -4,6 +4,41 @@ function aleatoire(a) {
     for (i = 0; i < a; i++) {
         result += caractères[Math.floor(Math.random() * caractères.length)];
     }
-    alert(result);
+    	return result;
+	}
+
+	aleatoire(10);
+
+
+    function tableauchainesaléatoires (lignes, colonnes){
+	var tableau = [];
+	var ligne = [];
+
+	for( var j=0 ; j<lignes ; j++ ){
+		for( var a=0 ; a<colonnes ; a++ ){ 	
+    		ligne.push(aleatoire(5));
+	}
+		tableau.push(ligne);
+		ligne = [];
+
+	}
+	return tableau;
+
 }
-aleatoire(10);
+
+	var caractères= tableauchainesaléatoires(10, 5);
+	console.log(caractères);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
