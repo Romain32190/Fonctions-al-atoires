@@ -15,19 +15,32 @@ function aleatoire(a) {
 	var ligne = [];
 
 	for( var j=0 ; j<lignes ; j++ ){
+		
 		for( var a=0 ; a<colonnes ; a++ ){ 	
-    		ligne.push(aleatoire(5));
-	}
+    		ligne.push(aleatoire(10));
+		}
 		tableau.push(ligne);
 		ligne = [];
 
-	}
+		}
 	return tableau;
+
+	}
+
+	var caractères = tableauchainesaléatoires(10, 10);
+	console.log(caractères);
+
+
+	for (i = 0; i < caractères.length; i++) {
+		$("#table").append('<tr></tr>');
+
+	for (j = 0; j < caractères[i].length; j++){
+		$("#table").append('<td>'+caractères[i][j]+'</td>');
+	}
 
 }
 
-	var caractères= tableauchainesaléatoires(10, 5);
-	console.log(caractères);
+
 
 
 
