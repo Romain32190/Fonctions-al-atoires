@@ -17,7 +17,7 @@ function aleatoire(a) {
 	for( var j=0 ; j<lignes ; j++ ){
 		
 		for( var a=0 ; a<colonnes ; a++ ){ 	
-    		ligne.push(aleatoire(10));
+    		ligne.push(aleatoire(5));
 		}
 		tableau.push(ligne);
 		ligne = [];
@@ -27,18 +27,38 @@ function aleatoire(a) {
 
 	}
 
+
+
+	function tablehtml(lignes, colonnes){
+
 	var caractères = tableauchainesaléatoires(10, 10);
-	console.log(caractères);
 
 
-	for (i = 0; i < caractères.length; i++) {
-		$("#table").append('<tr></tr>');
 
-	for (j = 0; j < caractères[i].length; j++){
-		$("#table").append('<td>'+caractères[i][j]+'</td>');
+    $("thead tr").append('<th>');
+
+    for (var r = 0; r < caractères.length ; r++) {
+    	$("thead tr").append('<th><input type="radio" name="inlineRadioOptions"></th>');
+    }
+
+	for (i = 0; i < lignes; i++) {
+		var ligne = $('<tr class=" "</tr>');
+		var radio = $('<td><input type="radio" name="inlineRadioOptions"></td>');
+		ligne.append(radio);
+
+		for (j = 0; j < colonnes; j++){
+			ligne.append('<td>'+caractères[i][j]+'</td>')
+			$("#table").append(ligne);
+
+		}
+
 	}
 
 }
+
+
+tablehtml(10,10);
+
 
 
 
